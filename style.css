@@ -1,21 +1,20 @@
 @font-face {
-	font-family: "fresh";
-	src: url("freshmarker.ttf");
+    font-family: "fresh";
+    src: url("freshmarker.ttf");
 }
 
-html,
-body {
-	height: 100%;
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
-	background-color: #fff;
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
 }
 
 .container {
-	min-height: 100%;
-	background: rgb(209, 209, 209);
-	display: flex;
-	align-items: center;
+    min-height: 100%;
+    background: rgb(209, 209, 209);
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -23,30 +22,38 @@ body {
 
 #capture {
     display: flex;
-	align-items: center;
+    align-items: center;
     justify-content: center;
 }
 
-.text {
-	text-align: center;
-	word-break: break-all;
-	font-size: 100px;
-	position: absolute;
-	font-family: fresh;
-	font-weight: 100;
-    letter-spacing: 4px;
-    outline: none;
-    line-height: 1; 
+img {
+    z-index: 1;
 }
 
-[contentEditable=true]:empty:not(:focus):before {
-	content: attr(data-text);
+.text {
+    text-align: center;
+    word-break: break-all;
+    font-size: 100px;
+    position: absolute;
+    font-family: fresh;
+    font-weight: 100;
+    letter-spacing: 4px;
+    outline: none;
+    line-height: 1;
+    z-index: 99;
+    width: 10em;
+}
+
+[contenteditable][placeholder]:empty:before {
+    content: attr(placeholder);
+    position: relative;
+    color: black;
+    background-color: transparent;
 }
 
 button {
     display: inline-block;
     padding: 0.35em 1.2em;
-    border: 0.1em solid #FFF;
     margin: 0 0.3em 0.3em 0;
     border-radius: 0.12em;
     box-sizing: border-box;
@@ -58,10 +65,11 @@ button {
     transition: all 0.2s;
     margin: .5em;
     cursor: pointer;
+    background: rgb(71, 71, 71);
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 0.37);
+    background-color: rgba(31, 31, 31, 0.37);
 }
 
 @media all and (max-width: 30em) {
